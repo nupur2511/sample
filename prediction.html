@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>custom Website</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}"/>
+    </head>
+    <body style="background-image: url('/static/images/bg5.jpg');background-repeat: no-repeat;background-size: cover;"></body>
+        <div class="wrapper">
+            <nav class="navbar">
+                <img class="logo" src="logo.PNG" alt="logo.PNG">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="active" href="prediction.html">Prediction</a></li>
+                   <!----- <li><a href="index.html">Login</a></li>--->
+                </ul>
+            </nav>
+            <section id="section4">
+                <div class="container">
+                    <div class="form-group">
+                        <center><h1>View Predicted Crime</h1></center>
+                        <div align="center">
+                            <form action = "{{ url_for('predict') }}" method = "POST">
+                                <input type="text" name="Location" placeholder="Enter Location"><br>
+                                <input type="datetime-local" class="form-control" name="timestamp" step="1"><br>
+                                <input type="submit" value="Predict" class="btn btn-primary">
+                                <input type="reset" value="Reset Data" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <form action = "{{ url_for('predict') }}" method = "POST">
+                            <h1>{{ prediction }}</h1>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
