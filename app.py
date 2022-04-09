@@ -15,9 +15,9 @@ app = Flask(__name__)
 
 ##rfc = pickle.load(open('model.pkl','rb'))
 
-@app.route('/')
+@app.route('/home.html')
 def Home():
-	return render_template("home.html")
+    return render_template("home.html")
 
 
 @app.route('/about.html')
