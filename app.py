@@ -10,10 +10,6 @@ import urllib.request
 import json
 from geopy.geocoders import Nominatim
 import pickle
-import logging
-
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 
 app = Flask(__name__)
 
